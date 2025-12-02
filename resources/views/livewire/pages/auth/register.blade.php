@@ -8,16 +8,13 @@ use Illuminate\Validation\Rules;
 use Livewire\Attributes\Layout;
 use Livewire\Volt\Component;
 
-new #[Layout('layouts.guest')] class extends Component
+new #[Layout('layouts.layoutbs5')] class extends Component
 {
     public string $name = '';
     public string $email = '';
     public string $password = '';
     public string $password_confirmation = '';
 
-    /**
-     * Handle an incoming registration request.
-     */
     public function register(): void
     {
         $validated = $this->validate([
@@ -29,60 +26,70 @@ new #[Layout('layouts.guest')] class extends Component
         $validated['password'] = Hash::make($validated['password']);
 
         event(new Registered($user = User::create($validated)));
-
         Auth::login($user);
 
         $this->redirect(route('dashboard', absolute: false), navigate: true);
     }
 }; ?>
 
-<div>
-    <form wire:submit="register">
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input wire:model="name" id="name" class="block mt-1 w-full" type="text" name="name" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+<div class="login-bg">
+    <div class="login-container">
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input wire:model="email" id="email" class="block mt-1 w-full" type="email" name="email" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+        <h1>Crear Cuenta</h1>
+        <p>Completa los datos para continuar</p>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+        <form wire:submit="register">
 
-            <x-text-input wire:model="password" id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+            <!-- Nombre -->
+            <input 
+                type="text" 
+                wire:model="name" 
+                class="input-login" 
+                placeholder="Nombre completo" 
+                required 
+                autofocus
+            />
+            <x-input-error :messages="$errors->get('name')" class="mt-2 text-danger" />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+            <!-- Email -->
+            <input 
+                type="email" 
+                wire:model="email" 
+                class="input-login" 
+                placeholder="Correo electrónico"
+                required
+            />
+            <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+            <!-- Password -->
+            <input 
+                type="password" 
+                wire:model="password" 
+                class="input-login" 
+                placeholder="Contraseña"
+                required
+            />
+            <x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" />
 
-            <x-text-input wire:model="password_confirmation" id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+            <!-- Confirm password -->
+            <input 
+                type="password" 
+                wire:model="password_confirmation" 
+                class="input-login" 
+                placeholder="Confirmar contraseña"
+                required
+            />
+            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2 text-danger" />
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+            <button class="btn-login">
+                Crear cuenta
+            </button>
+        </form>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}" wire:navigate>
-                {{ __('Already registered?') }}
-            </a>
+        <a href="{{ route('login') }}" wire:navigate class="d-block mt-3">
+            ¿Ya tienes una cuenta? Inicia sesión
+        </a>
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
+        <span class="version-tag">v1.0.0</span>
+    </div>
 </div>
