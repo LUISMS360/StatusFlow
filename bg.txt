@@ -1,0 +1,123 @@
+EXAMEN FINAL DE PABLO: 
+
+
+Examen 1: 
+
+1. Que es el modelo G2C  y cual es su objetivo principal ? 
+
+Es el modelo de nogocio de gobierno a consumidor y su objetivo principal es ofrecer servicios del estado directamente a los ciudadanos. 
+
+
+2. Menciona  tres ejemplos de plataformas G2C  en el peru y explica su funcion
+
+	- Reniec, tramites para el dni, partidas de nacimiento, etc.
+	- Sunat operaciones en linea,declaracion de impuestos
+	- Essalud para citas medicas
+
+
+3. ¿Que importacia tiene el modelo B2G para las empresa y para el gobierno?
+	
+	Permite para la empresa tener maroyr taza de clientes y poder acceder a grandes contratos
+	y tener estabilidad y a la vez el estado tiene ingresos constantes durante el tiempo de 	contrato.
+
+Examen 2: 
+
+1. ¿Cual es una ventaja importante de Shoify para los emprendedores sin conocimientos tecnicos?
+
+	que es facil de utilizar y que no require conocimientos tecnicos de programacion. 
+
+2. ¿Cuales son dos desventajas de usar Shopify?
+
+	- cobra comiciones
+	
+	- depende de aplicaciones de pago para funcionar
+
+3. ¿Quien fundo Mercado Libre y en que año ocurrio?
+ 
+	 Marcos Galperin 1999
+
+Examen 3: 
+
+1. ¿Cual es el objetivo principal de Izipay?
+
+	Permitir pagos seguros a negocios a traves de difernetes tarjetas y medios eletronicos 
+
+2. ¿Cuantos tipos de pasarela de pagos existen? explique
+
+	- Hospedada: redirige a otra pagina al usuario
+	- Integrada: el pago se hace dentro del mismo sitio web
+
+3. Mencione 4 softaware para evitar el fraude en el ecomerce
+
+	- Kount
+	- Riskifed
+	- sift 
+	- signifxd
+
+Examen 4: 
+
+1. Mencione tres ejemplos comunes del modelo C2B en el peru
+
+	- Influencers a empresa
+	- Freelancer a empresa
+	- Innovador a empresa
+
+2. Mencione 4 caracteristicas del comercio electronico C2C
+	
+	- Implemetacion de plataformaas intermedias
+	- Accebilidad a todos los usuarios
+	- Variedad en los metodos de pago
+	- gran variedad de productos
+
+
+3. ¿Que papel cumplen los sitemas de reputacion en el contrato electronico C2C?
+
+
+	Generar el papel de generar la seguridad al consumidor al momento de proceder con la 	compra. 
+	
+
+Examen 5: 
+
+1. Aceros Arequipa es un empresa que se dedica a comercializar productos especificamente para un sector industrial. ¿Que modelo comun es en B2B?
+
+	- Aceros Arequipa vende productos para otras empresas, así que su modelo B2B común es 	distribución. 
+
+2. Mencione las ventajas del modelo B2B
+
+	- Ventas más grandes y recurrentes
+
+	- Relaciones comerciales estables y a largo plazo
+	
+	- Mejor previsión de demanda
+
+	- Procesos de compra más profesionales
+
+
+3. ¿Por que se dice que en modelo B2G la relacion comercial esta mas condicionada a factores politcos y normativos que en B2B?
+
+
+	porque un empresa es la que pone las reglas. 
+
+
+
+Examen 6: 
+
+1. Que es Niubiz y cual era su nombre anterior?
+
+	- Plataforma para realizar pagos en aplicaiones web.  VisaNet
+
+
+2. Mnecionar 5 caracterisitcas de como generar confianza en e-commerce
+
+	- implemetacion de https
+	- integracion de pasarela de pagos
+	-  vibalidad en el proceso de entrega
+	-  buena reputacion por usuarios antiguos
+	-  hagilidad en los procesos de pagos
+
+3. Mencione 4 tipos de fraude. Explique cada uno de ellos. 
+
+	- estafa de producto
+	- cobro execesivo 
+	- publicidad engañosa
+	- 

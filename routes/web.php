@@ -7,10 +7,10 @@ use App\Livewire\Frontend\Tareas;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/statusflow/dashboard',Dashboard::class)->name('home');
-Route::get('/statusflow/equipos',Equip::class)->name('equipos');
-Route::get('/statusflow/tareas',Tareas::class)->name('tareas');
-Route::get('/statusflow/tareas/{equipo}',GestionarEquipo::class)->name('gestionar.equipo');
+Route::get('/statusflow/dashboard',Dashboard::class)->name('home')->middleware('auth');
+Route::get('/statusflow/equipos',Equip::class)->name('equipos')->middleware('auth');
+Route::get('/statusflow/tareas',Tareas::class)->name('tareas')->middleware('auth');
+Route::get('/statusflow/tareas/{equipo}',GestionarEquipo::class)->name('gestionar.equipo')->middleware('auth');
 Route::view('/', 'welcome');
 Route::view('/home','home')->name('home');
 Route::view('dashboard', 'dashboard')

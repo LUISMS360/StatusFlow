@@ -4,6 +4,7 @@ namespace App\Livewire\Frontend;
 
 use App\Models\Equipo;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -17,8 +18,12 @@ class GestionarEquipo extends Component
     public $equipo;
     public $usuario;
 
-    public function agregarUsuario(){
-
+    public function agregarUsuario($userid,$equipoid){
+        DB::table('user_equipos')->insert([
+            'user_id'=> $userid,
+            'equipo_id'=> $equipoid
+        ]);
+        $this->dispatch('add-user');
     }
     public function mount(Equipo $equipo){
         $this->equipo = $equipo;
