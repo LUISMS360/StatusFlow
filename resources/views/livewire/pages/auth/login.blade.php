@@ -9,9 +9,6 @@ new #[Layout('layouts.layoutbs5')] class extends Component
 {
     public LoginForm $form;
 
-    /**
-     * Handle an incoming authentication request.
-     */
     public function login(): void
     {
         $this->validate();
@@ -24,14 +21,14 @@ new #[Layout('layouts.layoutbs5')] class extends Component
     }
 }; ?>
 
-<div class="">
 
+<div class="login-bg">
     <div class="login-container">
        <h1 class="logo" style="color: #1e293b; justify-content: center; margin-bottom: 10px;">
             <i class="bi bi-lightning-charge-fill" style="color: #4f46e5;"></i> StatusFlow
         </h1>
 
-        <p>Accede a tu panel de control</p>
+        <p style="color:#64748b; margin-bottom: 20px;">Accede a tu panel de control</p>
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -42,22 +39,22 @@ new #[Layout('layouts.layoutbs5')] class extends Component
             <input
                 wire:model="form.email"
                 type="email"
-                class="input-login"
+                class="input-login form-control mb-2"
                 placeholder="Correo electrónico"
                 required
                 autofocus
             >
-            <x-input-error :messages="$errors->get('form.email')" class="mt-2" />
+            <x-input-error :messages="$errors->get('form.email')" class="mt-1" />
 
             <!-- Password -->
             <input
                 wire:model="form.password"
                 type="password"
-                class="input-login"
+                class="input-login form-control mb-2"
                 placeholder="Contraseña"
                 required
             >
-            <x-input-error :messages="$errors->get('form.password')" class="mt-2" />
+            <x-input-error :messages="$errors->get('form.password')" class="mt-1" />
 
             <!-- Remember me -->
             <div class="text-start mb-3">
@@ -69,7 +66,7 @@ new #[Layout('layouts.layoutbs5')] class extends Component
 
             <!-- Forgot password -->
             @if (Route::has('password.request'))
-                <a href="{{ route('password.request') }}" wire:navigate style="font-size:0.9rem;">
+                <a href="{{ route('password.request') }}" wire:navigate style="font-size:0.9rem; display:block; margin-bottom:15px;">
                     ¿Olvidaste tu contraseña?
                 </a>
             @endif
@@ -80,7 +77,9 @@ new #[Layout('layouts.layoutbs5')] class extends Component
             </button>
         </form>
 
-        <span class="version-tag">v1.0.0</span>
+        <span class="version-tag" style="display:block; margin-top:15px; font-size:0.8rem; color:#94a3b8;">
+            v1.0.0
+        </span>
 
     </div>
 </div>

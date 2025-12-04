@@ -22,7 +22,7 @@
                     <i class="bi bi-lightning-charge-fill"></i> StatusFlow
                 </div>
 
-                <a href="#" class="menu-link">
+                <a href="{{route('mi.espacio')}}" wire:navigate class="menu-link">
                     <div class="menu-item"><i class="bi bi-house-fill"></i> Mi Espacio</div>
                 </a>
 
@@ -40,11 +40,7 @@
                 </a>
 
                 <div style="margin-top: auto; margin-bottom: 10px;">
-                    <a href="#" class="menu-link" style="color:#ef4444;">
-                        <div class="menu-item">
-                            <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
-                        </div>
-                    </a>
+                   <livewire:lagout />
                 </div>
 
                 <div class="user-profile">

@@ -28,13 +28,12 @@ new #[Layout('layouts.layoutbs5')] class extends Component
         event(new Registered($user = User::create($validated)));
         Auth::login($user);
 
-        $this->redirect(route('dashboard', absolute: false), navigate: true);
+        $this->redirect(route('home', absolute: false), navigate: true);
     }
 }; ?>
 
 <div class="login-bg">
     <div class="login-container">
-
         <h1>Crear Cuenta</h1>
         <p>Completa los datos para continuar</p>
 

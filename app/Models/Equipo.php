@@ -13,6 +13,6 @@ class Equipo extends Model
     }
 
     public function userper(){
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class,'user_equipos');
     }
 }

@@ -55,6 +55,6 @@ class User extends Authenticatable
     }
 
     public function equiposper(): BelongsToMany{
-        return $this->belongsToMany(Equipo::class);
+        return $this->belongsToMany(Equipo::class,'user_equipos');
     }
 }
