@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Equipo extends Model
 {
@@ -14,5 +15,9 @@ class Equipo extends Model
 
     public function userper(){
         return $this->belongsToMany(User::class,'user_equipos');
+    }
+
+    public function tareas(): HasMany{  
+        return $this->hasMany(Tarea::class);
     }
 }

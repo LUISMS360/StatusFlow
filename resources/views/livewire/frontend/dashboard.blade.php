@@ -9,8 +9,29 @@
                             Crear Equipo
                         </button>                   
                 </div>
-            </div>
-            
+            </div>            
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Equipos</h4>
+                    <p class="card-text">Cantidad de equipos a los que pertences</p>
+                         <button type="button" class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            {{$equipos}}
+                        </button>                   
+                </div>
+            </div>            
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Tareas</h4>
+                    <p class="card-text">Cantidad de  tareas que tienes pendientes</p>
+                         <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            {{$tareas}}
+                        </button>                   
+                </div>
+            </div>            
         </div>
     </div>
 

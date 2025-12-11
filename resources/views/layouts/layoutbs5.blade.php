@@ -13,6 +13,9 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        {{-- IMPORTANTE --}}
+        @livewireStyles
     </head>
     <body class="login-bg">
         <button class="toggle-sidebar" onclick="document.querySelector('.sidebar').classList.toggle('show')">
@@ -22,5 +25,8 @@
         <div class="container mt-5 mb-5 d-flex justify-content-center">
             {{$slot}}
         </div>
+
+        {{-- IMPORTANTE --}}
+        @livewireScripts
     </body>
 </html>

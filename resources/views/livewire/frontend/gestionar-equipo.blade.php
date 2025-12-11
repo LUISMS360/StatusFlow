@@ -57,7 +57,7 @@
                         <td>{{$user->rol}}</td>
                         <td>{{$user->activo}}</td>                        
                         <td>{{$user->incorporacion}}</td>
-                        <td><a wire:navigate href="{{route('user.asignar.tarea',['usuario'=>$user->id])}}" class="btn btn-warning btn-sm">Gestionar</a></td>
+                        <td><a wire:navigate href="{{route('user.asignar.tarea',['equipo'=>$equipo->id,'usuario'=>$user->id])}}" class="btn btn-warning btn-sm">Gestionar</a></td>
                     </tr>
                 @endforeach
             </tbody>

@@ -7,6 +7,7 @@ namespace App\Models;
 use App\Livewire\Frontend\Equip;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -56,5 +57,9 @@ class User extends Authenticatable
 
     public function equiposper(): BelongsToMany{
         return $this->belongsToMany(Equipo::class,'user_equipos');
+    }
+
+    public function tareas(): HasMany {
+        return $this->hasMany(Tarea::class);
     }
 }
