@@ -1,17 +1,46 @@
 <div>
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">{{$usuario->name}}</h4>
-            <p class="card-text">{{$usuario->email}}</p>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">{{$usuario->name}}</h4>
+                    <p class="card-text">{{$usuario->email}}</p>
+                    <p class="card-text">{{$usuario->id}}</p>
+                </div>
+            </div>    
+        </div>
+        <div class="col-sm-3">
+              <div class="card">
+                <div class="card-body p-2">
+                    <h4 class="card-title">Tareas pendientes</h4>
+                    <p class="card-text">{{ $pendientes }}</p>
+                </div>
+            </div>   
+        </div>
+        <div class="col-sm-3">
+              <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Tareas realizadas</h4>
+                    <p class="card-text">{{ $completas }}</p>
+                </div>
+            </div>   
+        </div>
+        <div class="col-sm-3">
+              <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Tareas totales</h4>
+                    <p class="card-text">{{ $totales }}</p>
+                </div>
+            </div>   
         </div>
     </div>    
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <h4 class="mb-3">Asignar Tarea</h4>
                 <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropTarea">
                     Asignar Tarea
                 </button>                       
-        </div>
+        </div>        
     </div>
     <div class="container mt-5">
         <div

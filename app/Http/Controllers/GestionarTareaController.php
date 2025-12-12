@@ -19,7 +19,7 @@ class GestionarTareaController extends Controller
     public function subirTarea(Request $request){
         $tarea = time().'-'.$request->file('evidencia')->getClientOriginalName();
         $tareaId = $request->input('tarea');
-        Tarea::where('id',$tareaId)->update(['evidencia'=>$tarea]);
+        Tarea::where('id',$tareaId)->update(['estado'=>1,'evidencia'=>$tarea]);
         $request->file('evidencia')->storeAs('tareas',$tarea,'public');
         return redirect()->back()->with('success');
     }

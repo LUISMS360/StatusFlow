@@ -20,12 +20,34 @@ class GestionarUserEquipo extends Component
 
     public $nombreTarea;
     public $descripcionTarea;
+    public $pendientes; 
+    public $completas;
 
     public $estado;
-    public function mount(User $usuario,Equipo  $equipo){
+    public $totales;
+   public function mount(User $usuario, Equipo  $equipo)
+    {
         $this->usuario = $usuario;
         $this->equipo = $equipo;
+
+        $this->totales = DB::table('users as u')
+            ->join('tareas as t', 't.user_id', '=', 'u.id')
+            ->where('u.id', $this->usuario->id)
+            ->value(DB::raw('count(t.id)'));
+
+        $this->pendientes = DB::table('users as u')
+            ->join('tareas as t', 't.user_id', '=', 'u.id')
+            ->where('t.estado', 0)
+            ->where('u.id', $this->usuario->id)
+            ->value(DB::raw('count(t.id)'));
+
+        $this->completas = DB::table('users as u')
+            ->join('tareas as t', 't.user_id', '=', 'u.id')
+            ->where('t.estado', 1)
+            ->where('u.id', $this->usuario->id)
+            ->value(DB::raw('count(t.id)'));
     }
+
     public function asignarTarea(){
         Tarea::create([
             'nombre'=> $this->nombreTarea, 

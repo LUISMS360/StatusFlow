@@ -38,9 +38,8 @@ class FormUser extends Form
 
     public function save(){
        
+        dd($this->foto);
        $foto = time() . '.' . $this->foto->getClientOriginalExtension();
-
-
        Storage::disk('public')->putFileAs('users',$this->foto,$foto);
 
        User::where('id',Auth::user()->id)->update([
