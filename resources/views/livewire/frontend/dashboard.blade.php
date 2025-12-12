@@ -1,16 +1,18 @@
 <div>
     <div class="row">
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Crear equipo</h4>
-                    <p class="card-text">Cree un nuevo equipo y integre a sus mejores talentos</p>
-                         <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            Crear Equipo
-                        </button>                   
-                </div>
-            </div>            
-        </div>
+        @if(Auth::user()->role==='admin')
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Crear equipo</h4>
+                        <p class="card-text">Cree un nuevo equipo y integre a sus mejores talentos</p>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Crear Equipo
+                            </button>                   
+                    </div>
+                </div>            
+            </div>
+        @endif
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">

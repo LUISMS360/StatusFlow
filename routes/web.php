@@ -21,6 +21,7 @@ Route::get('/statusflow/gestionar-tarea/equipo/{equipo}/usuario/{usuario}/tarea/
 GestionarTareaUser::class)->name('gestionar.tarea.user');
 Route::get('/statusflow/tarea/{tarea}',[GestionarTareaController::class,'index'])->name('gestionar.tarea.view');
 Route::post('/statusflow/tarea',[GestionarTareaController::class,'subirTarea'])->name('gestionar.tarea');
+Route::get('/statusflow/tarea',Tareas::class);
 Route::get('/statusflow/mi-espacio',[MiEspacioController::class,'index'])->name('mi.espacio');
 Route::post('/statusflow/mi-espacio',[MiEspacioController::class,'store'])->name('mi.espacio.update');
 

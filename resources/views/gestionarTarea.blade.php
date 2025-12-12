@@ -3,9 +3,8 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-sm-4">
-                    <form action="{{ route('gestionar.tarea') }}" enctype="multipart/form-data" method="post">
+                    <form action="{{ route('gestionar.tarea') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('POST')
                         <h4>Tarea: {{$tarea->nombre}} </h4>
                         <label for="">Descripcion: {{$tarea->descripcion}} </label>
                         <br>
@@ -24,7 +23,15 @@
                             <label class="form-label">Choose file</label>
                             <input type="file" id="evidencia" name="evidencia" class="form-control" />
                         </div>
-
+                        @error('evidencia')
+                            <div
+                                class="alert alert-danger mt-2 mb2"
+                                role="alert"
+                            >
+                                <strong>Error</strong> {{$message}}
+                            </div>
+                            
+                        @enderror
                         <button type="submit" class="btn btn-primary mt-3">
                             Entregar
                         </button>                                                                      
@@ -32,14 +39,10 @@
                 </div>
             </div>
         </div>
-        @session('success')
-            <div
-                class="alert alert-success mt-3 mb-3"
-                role="alert"
-            >
-                <strong>Exitoso</strong> Su evidencia se ha subido con exito!
+       @if (session('success'))
+            <div class="alert alert-success mt-3 mb-3" role="alert">
+                <strong>Exitoso:</strong> {{ session('success') }}
             </div>
-            
-        @endsession
+        @endif
     </div>
 </x-layouts.app>

@@ -44,11 +44,11 @@
                    <livewire:lagout />
                 </div>
 
-                <div class="user-profile">
-                    <div class="avatar-small" style="background:#ef4444;"></div>
+               <div class="user-profile">
+                    <div class="avatar-small"><img class="img-fluid" src="{{ asset('storage/perfiles/'.Auth::user()->foto) }}" alt=""></div>
                     <div>
-                        <small>Modo Supervisor</small><br>
-                        <strong>Admin</strong>
+                        <small>{{ Auth::user()->name }}</small><br>
+                        <strong>{{ Auth::user()->rol }}</strong>
                     </div>
                 </div>
 

@@ -28,15 +28,22 @@ class GestionarEquipo extends Component
     // Recargar la tabla luego de agregar un usuario
     public function agregarUsuario($userid, $equipoid)
     {
-        DB::table('user_equipos')->insert([
-            'user_id'  => $userid,
-            'equipo_id'=> $equipoid
-        ]);
+        if(DB::table('user_equipos')->where('user_id',$userid)
+            ->where('equipo_id',$equipoid)
+            ->exists()){
+                
+            $this->dispatch('exists');
+        }else{
+            DB::table('user_equipos')->insert([
+                'user_id'  => $userid,
+                'equipo_id'=> $equipoid
+            ]);
 
-        // Recargar solo la paginación
-        $this->resetPage();
+            // Recargar solo la paginación
+            $this->resetPage();
 
-        $this->dispatch('add-user');
+            $this->dispatch('add-user');
+        }        
     }
 
     public function render()
@@ -48,6 +55,7 @@ class GestionarEquipo extends Component
                 'u.email as email',
                 'u.rol as rol',
                 'activo',
+                'u.foto as foto',
                 'ue.created_at as incorporacion'
             )
             ->join('users as u', 'u.id', '=', 'ue.user_id')
@@ -55,7 +63,7 @@ class GestionarEquipo extends Component
             ->paginate(10);
 
         // Búsqueda de usuarios
-        $usuarios = User::select('id','name','email')
+        $usuarios = User::select('id','name','email','foto')
             ->where('name', $this->usuario)
             ->get();
 

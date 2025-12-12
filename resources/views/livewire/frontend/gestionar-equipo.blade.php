@@ -25,7 +25,7 @@
             <div>
                 <ul>
                     @foreach ($usuarios as $usuario)
-                        <li>{{$usuario->name}} -  {{$usuario->email}} - <button type="button" class="btn btn-success btn-sm" wire:click="agregarUsuario({{ $usuario->id }}, {{ $equipo->id }})">Agregar</button></li>
+                        <li>{{$usuario->name}} -  {{$usuario->email}} - <img src="{{ asset('storage/perfiles/'.$usuario->foto) }}"  alt="" style="height: 100px; max-width:100px;"> <button type="button" class="btn btn-success btn-sm" wire:click="agregarUsuario({{ $usuario->id }}, {{ $equipo->id }})">Agregar</button></li>
                     @endforeach
                 </ul>
             </div>
@@ -57,7 +57,13 @@
                         <td>{{$user->rol}}</td>
                         <td>{{$user->activo}}</td>                        
                         <td>{{$user->incorporacion}}</td>
-                        <td><a wire:navigate href="{{route('user.asignar.tarea',['equipo'=>$equipo->id,'usuario'=>$user->id])}}" class="btn btn-warning btn-sm">Gestionar</a></td>
+                        <td>
+                            <a href="{{ route('user.asignar.tarea', ['equipo'=>$equipo->id, 'usuario'=>$user->id]) }}" 
+                        class="btn btn-warning btn-sm">
+                        Gestionar
+                        </a>
+                        </td>                       
+                        
                     </tr>
                 @endforeach
             </tbody>
@@ -67,6 +73,13 @@
         <script>
             document.addEventListener('add-user',event=>{
                 alert('Compañero agregado al grupo');
+            });
+        </script>
+    @endscript
+    @script
+        <script>
+            document.addEventListener('exists',event=>{
+                alert('El Compañero ya pertenece al grupo');
             });
         </script>
     @endscript

@@ -13,7 +13,8 @@ class Tarea extends Model
         'estado',
         'user_id',
         'equipo_id',
-        'evidencia'
+        'evidencia',
+        'mensaje'
     ];
 
 

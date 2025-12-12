@@ -16,11 +16,24 @@ class GestionarTareaController extends Controller
     public function index(Tarea $tarea){
         return view('gestionarTarea',['tarea'=>$tarea]);
     }
-    public function subirTarea(Request $request){
-        $tarea = time().'-'.$request->file('evidencia')->getClientOriginalName();
+   public function subirTarea(Request $request){
+
+        $request->validate(['evidencia'=>'required|file']);
+
+        $nombreArchivo = time() . '-' . $request->file('evidencia')->getClientOriginalName();
+
         $tareaId = $request->input('tarea');
-        Tarea::where('id',$tareaId)->update(['estado'=>1,'evidencia'=>$tarea]);
-        $request->file('evidencia')->storeAs('tareas',$tarea,'public');
-        return redirect()->back()->with('success');
+
+        // Actualiza la tarea
+        Tarea::where('id', $tareaId)->update([
+            'estado' => 1,
+            'evidencia' => $nombreArchivo
+        ]);
+
+        // Guarda la evidencia
+        $request->file('evidencia')->storeAs('tareas', $nombreArchivo, 'public');
+
+        return redirect()->back()->with('success', 'Evidencia subida con éxito');
     }
+
 }

@@ -23,20 +23,20 @@
                     <i class="bi bi-lightning-charge-fill"></i> StatusFlow
                 </div>
 
-                <a href="{{route('mi.espacio')}}"  class="menu-link">
+                <a href="{{route('mi.espacio')}}" wire:navigate  class="menu-link">
                     <div class="menu-item"><i class="bi bi-house-fill"></i> Mi Espacio</div>
                 </a>
 
-                <a href="{{route('tareas')}}"  class="menu-link">
+                <a href="{{route('tareas')}}" wire:navigate class="menu-link">
                     <div class="menu-item"><i class="bi bi-list-check"></i> Mis Tareas</div>
                 </a>
 
-                <a href="{{route('equipos')}}"  class="menu-link">
+                <a href="{{route('equipos')}}" wire:navigate  class="menu-link">
                     <div class="menu-item"><i class="bi bi-people-fill"></i> Equipo</div>
                 </a>
 
                 <!-- Activo -->
-                <a href="{{route('home')}}"  class="menu-link">
+                <a href="{{route('home')}}" wire:navigate class="menu-link">
                     <div class="menu-item active"><i class="bi bi-pie-chart-fill"></i> Dashboard</div>
                 </a>
 
@@ -47,8 +47,8 @@
                 <div class="user-profile">
                     <div class="avatar-small" style="background:#ef4444;"></div>
                     <div>
-                        <small>Modo Supervisor</small><br>
-                        <strong>Admin</strong>
+                        <small>{{ Auth::user()->name }}</small><br>
+                        <strong>{{ Auth::user()->rol }}</strong>
                     </div>
                 </div>
 
